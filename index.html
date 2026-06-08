@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PalmShoopy - catálogo premium de eletrônicos, celulares, perfumes, cosméticos e mobilidade elétrica." />
+  <title>PalmShoopy | Loja Premium de Importados</title>
+  <style>
+    :root{
+      --bg:#f4f5f7;
+      --surface:#ffffff;
+      --surface-2:#f9fafb;
+      --ink:#111827;
+      --muted:#667085;
+      --line:#e5e7eb;
+      --brand:#0f172a;
+      --accent:#b8860b;
+      --accent-2:#d4af37;
+      --success:#087443;
+      --danger:#b42318;
+      --shadow:0 18px 50px rgba(15,23,42,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+    a{text-decoration:none;color:inherit}
+    button,input{font-family:inherit}
+    .container{width:min(1240px,calc(100% - 40px));margin:0 auto}
+    .topbar{background:#0b1220;color:#d0d5dd;font-size:13px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .topbar .container{height:42px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .topbar strong{color:#fff;font-weight:600}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .header-main{height:82px;display:grid;grid-template-columns:220px 1fr 260px;gap:24px;align-items:center}
+    .logo{display:flex;flex-direction:column;gap:2px;letter-spacing:-.03em}
+    .logo b{font-size:27px;color:#0b1220;font-weight:850}.logo span{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
+    .search{position:relative}.search input{width:100%;height:48px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;padding:0 52px 0 20px;color:var(--ink);font-size:14px;outline:none}.search input:focus{border-color:#98a2b3;background:white;box-shadow:0 0 0 4px rgba(15,23,42,.06)}.search:after{content:'⌕';position:absolute;right:19px;top:8px;font-size:25px;color:#475467}
+    .header-actions{display:flex;justify-content:flex-end;gap:10px}.header-actions button,.whats{height:44px;border-radius:999px;border:1px solid var(--line);background:white;color:#111827;font-weight:700;padding:0 16px;cursor:pointer}.whats{display:inline-flex;align-items:center;background:#0b1220;color:white;border-color:#0b1220}.header-actions button:hover,.whats:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(15,23,42,.12)}
+    nav{background:white;border-bottom:1px solid var(--line)}nav .container{display:flex;align-items:center;gap:26px;height:50px;overflow:auto}nav a{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#344054;font-weight:800;white-space:nowrap}nav a:hover{color:var(--accent)}
+    .hero{background:linear-gradient(135deg,#0b1220 0%,#111827 55%,#25210f 100%);color:white;position:relative;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 35%,rgba(212,175,55,.22),transparent 35%),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:auto,72px 72px;opacity:.95}.hero .container{position:relative;padding:46px 0 34px;display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.eyebrow{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);padding:8px 13px;border-radius:999px;color:#e5e7eb;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hero h1{margin-top:20px;font-size:54px;line-height:1.03;letter-spacing:-.055em;max-width:660px}.hero p{margin-top:18px;color:#d0d5dd;font-size:17px;max-width:560px}.hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:999px;height:50px;padding:0 22px;font-weight:850;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.btn-primary{background:linear-gradient(135deg,var(--accent-2),#ad7f0b);color:#111827}.btn-dark{background:white;color:#111827}.btn-outline{background:transparent;border:1px solid rgba(255,255,255,.28);color:white}.hero-panel{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:28px;padding:18px;box-shadow:0 30px 90px rgba(0,0,0,.28)}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hero-product{background:white;border-radius:20px;padding:15px;color:#111827;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}.hero-product img{width:100%;height:122px;object-fit:contain}.hero-product small{color:#667085;text-transform:uppercase;font-weight:800;letter-spacing:.08em}.hero-product b{font-size:15px}.hero-product span{font-weight:900;color:#0b1220}.hero-product.featured{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:230px;background:linear-gradient(135deg,#fff,#f6f1e5)}.hero-product.featured img{height:190px}.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.trust-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:14px}.trust-card b{display:block;font-size:15px}.trust-card span{color:#d0d5dd;font-size:12px}
+    .section{padding:42px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}.section-head h2{font-size:32px;letter-spacing:-.035em}.section-head p{color:var(--muted);max-width:540px}.filters{display:flex;gap:10px;overflow:auto;padding-bottom:4px}.filter{border:1px solid var(--line);background:white;padding:11px 16px;border-radius:999px;font-weight:850;color:#344054;white-space:nowrap;cursor:pointer}.filter.active,.filter:hover{background:#0b1220;color:white;border-color:#0b1220}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 2px rgba(15,23,42,.03);transition:.25s}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.image-wrap{height:230px;background:linear-gradient(180deg,#f8fafc,#eef1f5);display:flex;align-items:center;justify-content:center;position:relative;padding:20px}.image-wrap img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.badge{position:absolute;left:14px;top:14px;background:#0b1220;color:white;padding:7px 10px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}.badge.gold{background:#8a6408}.body{padding:17px}.brand{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:900}.name{margin-top:6px;min-height:48px;font-size:15px;font-weight:850;line-height:1.25}.meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--muted);font-size:13px}.stock{color:var(--success);font-weight:800}.price{margin-top:12px;font-size:25px;font-weight:950;letter-spacing:-.04em}.installment{font-size:12px;color:var(--muted);margin-top:2px}.actions{display:grid;grid-template-columns:1fr 45px;gap:9px;margin-top:15px}.buy{height:44px;background:#0b1220;color:white;border:0;border-radius:12px;font-weight:900;cursor:pointer}.fav{height:44px;border:1px solid var(--line);background:white;border-radius:12px;font-weight:900;cursor:pointer}.buy:hover{background:#1f2937}
+    .deal{margin:18px 0 0;background:#111827;color:white;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;align-items:center}.deal-copy{padding:38px}.deal-copy small{color:#d4af37;font-weight:900;text-transform:uppercase;letter-spacing:.14em}.deal-copy h2{font-size:38px;line-height:1.08;letter-spacing:-.045em;margin-top:12px}.deal-copy p{color:#d0d5dd;margin-top:12px}.deal img{width:100%;height:330px;object-fit:contain;background:linear-gradient(135deg,#f9fafb,#ece6d4)}
+    .proof{background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}.proof-item{background:white;padding:28px}.proof-item b{display:block;font-size:18px}.proof-item p{color:var(--muted);font-size:14px;margin-top:6px}
+    .cart-drawer{position:fixed;right:20px;bottom:20px;width:360px;max-width:calc(100% - 40px);background:white;border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 90px rgba(15,23,42,.22);z-index:80;display:none;overflow:hidden}.cart-drawer.open{display:block}.cart-head{padding:18px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.cart-body{padding:14px 18px;max-height:320px;overflow:auto}.cart-item{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:12px 0;font-size:14px}.cart-total{padding:18px;font-size:20px;font-weight:950}.checkout{margin:0 18px 18px;width:calc(100% - 36px);height:48px;border-radius:14px;border:0;background:#087443;color:white;font-weight:950;cursor:pointer}
+    footer{background:#0b1220;color:#cbd5e1;padding:44px 0 24px}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:28px}.footer-grid h4{color:white;margin-bottom:12px}.footer-grid p,.footer-grid a{font-size:14px;color:#94a3b8;display:block;margin:7px 0}.copy{border-top:1px solid rgba(255,255,255,.08);margin-top:28px;padding-top:20px;color:#64748b;font-size:12px}
+    @media(max-width:1000px){.header-main{grid-template-columns:1fr;gap:12px;height:auto;padding:16px 0}.header-actions{justify-content:flex-start}.hero .container,.deal{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.trust,.proof-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.container{width:min(100% - 24px,1240px)}.topbar .container{height:auto;padding:10px 0;align-items:flex-start;flex-direction:column}.hero h1{font-size:37px}.hero-grid{grid-template-columns:1fr}.hero-product.featured{grid-column:span 1;grid-template-columns:1fr}.products{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.trust,.proof-grid,.footer-grid{grid-template-columns:1fr}.deal-copy{padding:26px}.deal-copy h2{font-size:30px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span><strong>Atendimento personalizado</strong> para compras selecionadas e produtos importados.</span><span>Compra segura via WhatsApp | Cotação confirmada no atendimento</span></div></div>
+  <header>
+    <div class="container header-main">
+      <a href="#" class="logo"><b>PalmShoopy</b><span>Premium Imports</span></a>
+      <div class="search"><input id="searchInput" type="search" placeholder="Buscar por celular, perfume, eletrônico ou marca" /></div>
+      <div class="header-actions"><button onclick="toggleCart()">Carrinho <span id="cartCount">0</span></button><a class="whats" target="_blank" href="https://wa.me/5950991472858">Comprar pelo WhatsApp</a></div>
+    </div>
+  </header>
+  <nav><div class="container"><a href="#ofertas">Ofertas</a><a href="#celulares">Celulares</a><a href="#eletronicos">Eletrônicos</a><a href="#perfumes">Perfumes</a><a href="#cosmeticos">Cosméticos</a><a href="#mobilidade">Mobilidade</a><a href="#seguranca">Confiança</a></div></nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="eyebrow">Curadoria premium de importados</span>
+          <h1>Produtos selecionados com atendimento direto e compra sem complicação.</h1>
+          <p>Celulares, eletrônicos, perfumes e itens de alta procura em uma vitrine objetiva, profissional e preparada para conversão pelo WhatsApp.</p>
+          <div class="hero-cta"><a class="btn btn-primary" href="#ofertas">Ver ofertas em destaque</a><a class="btn btn-outline" href="#catalogo">Explorar catálogo</a></div>
+          <div class="trust">
+            <div class="trust-card"><b>Atendimento direto</b><span>Pedido confirmado por vendedor</span></div>
+            <div class="trust-card"><b>Produtos selecionados</b><span>Itens com alta procura</span></div>
+            <div class="trust-card"><b>Cotação no momento</b><span>Preço validado antes da compra</span></div>
+            <div class="trust-card"><b>Compra orientada</b><span>Suporte antes do pedido</span></div>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-grid">
+            <div class="hero-product featured"><div><small>Destaque da semana</small><b>iPhone 15 Pro Max 256GB</b><br><span>Consultar preço</span></div><img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=900&q=80" alt="iPhone premium"></div>
+            <div class="hero-product"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80" alt="Headphone"><small>Eletrônicos</small><b>Áudio premium</b></div>
+            <div class="hero-product"><img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=700&q=80" alt="Perfume"><small>Perfumes</small><b>Fragrâncias importadas</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="container">
+        <div class="section-head"><div><h2>Catálogo PalmShoopy</h2><p>Vitrine organizada para cliente final: produtos em destaque, visual limpo, preço consultivo e CTA direto para fechamento.</p></div><div class="filters"><button class="filter active" onclick="filterProducts('all', this)">Todos</button><button class="filter" onclick="filterProducts('celular', this)">Celulares</button><button class="filter" onclick="filterProducts('eletronico', this)">Eletrônicos</button><button class="filter" onclick="filterProducts('perfume', this)">Perfumes</button><button class="filter" onclick="filterProducts('cosmetico', this)">Cosméticos</button><button class="filter" onclick="filterProducts('mobilidade', this)">Mobilidade</button></div></div>
+        <div class="products" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="ofertas"><div class="container"><div class="deal"><div class="deal-copy"><small>Oferta consultiva</small><h2>Escolha o produto. Nós confirmamos disponibilidade, cotação e melhor condição pelo WhatsApp.</h2><p>Evite compra por impulso sem suporte. Aqui o atendimento valida o item antes do fechamento para reduzir erro de modelo, cor, memória ou versão.</p><a class="btn btn-primary" style="margin-top:22px" target="_blank" href="https://wa.me/5950991472858?text=Olá,%20quero%20ver%20as%20ofertas%20PalmShoopy.">Chamar atendimento</a></div><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1100&q=80" alt="Produtos eletrônicos premium"></div></div></section>
+
+    <section class="proof section" id="seguranca"><div class="container proof-grid"><div class="proof-item"><b>Vitrine objetiva</b><p>Menos distração no início e mais foco em produto.</p></div><div class="proof-item"><b>Compra assistida</b><p>O cliente tira dúvidas antes de fechar.</p></div><div class="proof-item"><b>Pedido por WhatsApp</b><p>Fluxo simples, direto e fácil de converter.</p></div><div class="proof-item"><b>Visual sério</b><p>Sem excesso de animações, emojis ou estética infantil.</p></div></div></section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer"><div class="cart-head"><b>Carrinho</b><button onclick="toggleCart()" style="border:0;background:white;font-size:20px;cursor:pointer">×</button></div><div class="cart-body" id="cartItems"></div><div class="cart-total" id="cartTotal">Total: consultar</div><button class="checkout" onclick="checkoutWhatsApp()">Finalizar pelo WhatsApp</button></aside>
+
+  <footer><div class="container"><div class="footer-grid"><div><h4>PalmShoopy</h4><p>Loja premium de importados com catálogo selecionado e atendimento direto para cliente final.</p></div><div><h4>Categorias</h4><a href="#celulares">Celulares</a><a href="#eletronicos">Eletrônicos</a><a href="#perfumes">Perfumes</a><a href="#cosmeticos">Cosméticos</a></div><div><h4>Atendimento</h4><a target="_blank" href="https://wa.me/5950991472858">WhatsApp</a><a href="mailto:contato@palmshoopy.com">contato@palmshoopy.com</a><a href="#seguranca">Compra segura</a></div><div><h4>Informação</h4><p>Valores, estoque e disponibilidade devem ser confirmados no atendimento antes da finalização.</p></div></div><div class="copy">© 2026 PalmShoopy. Catálogo demonstrativo para venda direta ao consumidor.</div></div></footer>
+
+  <script>
+    const products = [
+      {cat:'celular',sec:'celulares',brand:'Apple',name:'iPhone 15 Pro Max 256GB',price:'Consultar',stock:'Alta procura',badge:'Premium',img:'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=800&q=80'},
+      {cat:'celular',sec:'celulares',brand:'Samsung',name:'Galaxy S24 Ultra 256GB',price:'Consultar',stock:'Disponível sob consulta',badge:'Destaque',img:'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=800&q=80'},
+      {cat:'celular',sec:'celulares',brand:'Xiaomi',name:'POCO M6 Pro 8GB + 256GB',price:'Consultar',stock:'Consultar cor',badge:'Custo-benefício',img:'https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80'},
+      {cat:'celular',sec:'celulares',brand:'Tecno',name:'Camon 30S 8GB + 256GB',price:'Consultar',stock:'Boa procura',badge:'Oferta',img:'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80'},
+      {cat:'eletronico',sec:'eletronicos',brand:'Sony',name:'Headphone Bluetooth com Cancelamento de Ruído',price:'Consultar',stock:'Selecionado',badge:'Áudio',img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80'},
+      {cat:'eletronico',sec:'eletronicos',brand:'JBL',name:'Caixa Bluetooth Portátil Premium',price:'Consultar',stock:'Pronta procura',badge:'Som',img:'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=800&q=80'},
+      {cat:'eletronico',sec:'eletronicos',brand:'Apple',name:'Apple Watch Series',price:'Consultar',stock:'Consultar modelo',badge:'Smartwatch',img:'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&w=800&q=80'},
+      {cat:'eletronico',sec:'eletronicos',brand:'GoPro',name:'Câmera de Ação 4K',price:'Consultar',stock:'Para viagem',badge:'Câmera',img:'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=800&q=80'},
+      {cat:'perfume',sec:'perfumes',brand:'Importados',name:'Perfumes Masculinos Selecionados',price:'Consultar',stock:'Linha premium',badge:'Original',img:'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80'},
+      {cat:'perfume',sec:'perfumes',brand:'Importados',name:'Perfumes Femininos Selecionados',price:'Consultar',stock:'Alta saída',badge:'Elegância',img:'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80'},
+      {cat:'cosmetico',sec:'cosmeticos',brand:'Beauty',name:'Kit Skincare Premium',price:'Consultar',stock:'Cuidados pessoais',badge:'Beleza',img:'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80'},
+      {cat:'cosmetico',sec:'cosmeticos',brand:'Makeup',name:'Maquiagem Importada Selecionada',price:'Consultar',stock:'Consultar marcas',badge:'Make',img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80'},
+      {cat:'mobilidade',sec:'mobilidade',brand:'Mobilidade',name:'Patinete Elétrico Urbano',price:'Consultar',stock:'Consultar potência',badge:'Mobilidade',img:'https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=800&q=80'},
+      {cat:'mobilidade',sec:'mobilidade',brand:'Mobilidade',name:'Scooter Elétrica Premium',price:'Consultar',stock:'Sob encomenda',badge:'Premium',img:'https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=800&q=80'}
+    ];
+    let cart = [];
+    const grid = document.getElementById('productGrid');
+    function render(list=products){
+      grid.innerHTML = list.map((p,i)=>`<article class="product" data-cat="${p.cat}" id="${p.sec}"><div class="image-wrap"><span class="badge ${i%3===0?'gold':''}">${p.badge}</span><img src="${p.img}" alt="${p.name}" loading="lazy"></div><div class="body"><div class="brand">${p.brand}</div><div class="name">${p.name}</div><div class="meta"><span>Produto selecionado</span><span class="stock">${p.stock}</span></div><div class="price">${p.price}</div><div class="installment">Preço, estoque e variação confirmados no atendimento.</div><div class="actions"><button class="buy" onclick="addToCart(${i})">Tenho interesse</button><button class="fav" onclick="saveLead('${p.name}')">＋</button></div></div></article>`).join('');
+    }
+    function filterProducts(cat, btn){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(cat==='all'?products:products.filter(p=>p.cat===cat));}
+    function addToCart(i){cart.push(products[i]);updateCart();document.getElementById('cartDrawer').classList.add('open');}
+    function saveLead(name){window.open(`https://wa.me/5950991472858?text=Olá,%20quero%20mais%20detalhes%20sobre:%20${encodeURIComponent(name)}`,'_blank');}
+    function toggleCart(){document.getElementById('cartDrawer').classList.toggle('open');updateCart();}
+    function updateCart(){document.getElementById('cartCount').textContent=cart.length;document.getElementById('cartItems').innerHTML=cart.length?cart.map(p=>`<div class="cart-item"><span>${p.brand} - ${p.name}</span><b>Consultar</b></div>`).join(''):'<p style="color:#667085">Nenhum produto selecionado ainda.</p>';document.getElementById('cartTotal').textContent=cart.length?`${cart.length} item(ns) selecionado(s)`:'Total: consultar';}
+    function checkoutWhatsApp(){const text=cart.length?`Olá, tenho interesse nestes produtos PalmShoopy:%0A${cart.map(p=>`- ${p.brand} ${p.name}`).join('%0A')}%0A%0APode confirmar preço e disponibilidade?`:'Olá, quero atendimento para escolher produtos PalmShoopy.';window.open(`https://wa.me/5950991472858?text=${text}`,'_blank');}
+    document.getElementById('searchInput').addEventListener('input',e=>{const q=e.target.value.toLowerCase();render(products.filter(p=>(p.brand+' '+p.name+' '+p.cat).toLowerCase().includes(q)))});
+    render();
+  </script>
+</body>
+</html>
